@@ -23,8 +23,14 @@
 module gfx_renderer(
     input [9:0] x,
     input [9:0] y,
-    input [3:0] red,
-    input [3:0] green,
-    input [3:0] blue
-    );
+    output [3:0] red,
+    output [3:0] green,
+    output [3:0] blue
+);
+
+    // TODO: Other stuff will set these for each pixel
+    assign red = 4'hF;
+    assign green = 4'h9;
+    assign blue = 4'hF;
+    
 endmodule
