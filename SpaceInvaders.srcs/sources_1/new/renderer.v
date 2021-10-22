@@ -21,6 +21,7 @@
 
 
 module gfx_renderer(
+    input enable,
     input [9:0] x,
     input [9:0] y,
     output [3:0] red,
@@ -29,8 +30,7 @@ module gfx_renderer(
 );
 
     // TODO: Other stuff will set these for each pixel
-    assign red = 4'hF;
-    assign green = 4'h9;
-    assign blue = 4'hF;
-    
+    assign red = enable ? 4'h5 : 4'h0;
+    assign green = enable ? 4'h5 : 4'h0;
+    assign blue = enable ? 4'h5 : 4'h0;
 endmodule

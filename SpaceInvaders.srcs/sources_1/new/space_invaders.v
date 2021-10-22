@@ -30,6 +30,7 @@ module space_invaders(
 );
     wire pixelClock;
     wire [9:0] x, y;
+    wire video_enable;
 
     pixel_clk pixel_clk_generator(
         .clk_100mhz(clk_100mhz),
@@ -40,11 +41,13 @@ module space_invaders(
         .clk_25_2mhz(pixelClock),
         .hsync(hsync),
         .vsync(vsync),
+        .enable(video_enable),
         .x(x),
         .y(y)
     );
     
     gfx_renderer renderer(
+        .enable(video_enable),
         .x(x),
         .y(y),
         .red(vga_red),

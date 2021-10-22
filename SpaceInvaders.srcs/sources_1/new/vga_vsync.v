@@ -23,6 +23,7 @@
 module vga_vsync(
     input wire next, // Set high to advance line
     output wire [9:0] y, // X Position
+    output wire enable,
     output wire vsync
 );
 
@@ -34,7 +35,8 @@ module vga_vsync(
     reg [9:0] y_pos = 0;
 
     assign y = y_pos;
-    assign vsync = ~(y_pos >= SYNC_START && y_pos < SYNC_END);
+    assign vsync = ~(y_pos >= SYNC_START && y_pos <= SYNC_END);
+    assign enable = y_pos < ACTIVE_END;
 
     always @(posedge next) begin
         y_pos <= y_pos == END ? 0 : y_pos + 1;

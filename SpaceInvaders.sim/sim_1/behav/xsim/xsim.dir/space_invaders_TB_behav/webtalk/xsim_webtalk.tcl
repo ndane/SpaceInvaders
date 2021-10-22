@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/Users/natha/Projects/SpaceInvaders/SpaceInvaders.sim/sim_1/behav/xsim/xsim.dir/space_invaders_TB_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Fri Oct 22 00:44:34 2021" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Fri Oct 22 17:07:42 2021" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2021.1.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "3286242" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "7946e758-1bf8-4505-9df5-3cb7183cbb8a" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "f2da4a950a8c47aca320c735dd8cfed5" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "46" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "56" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Windows Server 2016 or Windows 10" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "AMD Ryzen 9 3950X 16-Core Processor            " -context "user_environment"
@@ -24,9 +24,9 @@ webtalk_add_data -client project -key system_ram -value "34.000 GB" -context "us
 webtalk_register_client -client xsim
 webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
-webtalk_add_data -client xsim -key runtime -value "11 ms" -context "xsim\\usage"
+webtalk_add_data -client xsim -key runtime -value "1 ms" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "1" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "1.14_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "15552_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 1786319054 -regid "" -xml C:/Users/natha/Projects/SpaceInvaders/SpaceInvaders.sim/sim_1/behav/xsim/xsim.dir/space_invaders_TB_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/natha/Projects/SpaceInvaders/SpaceInvaders.sim/sim_1/behav/xsim/xsim.dir/space_invaders_TB_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/natha/Projects/SpaceInvaders/SpaceInvaders.sim/sim_1/behav/xsim/xsim.dir/space_invaders_TB_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.11_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "15536_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 1595546113 -regid "" -xml C:/Users/natha/Projects/SpaceInvaders/SpaceInvaders.sim/sim_1/behav/xsim/xsim.dir/space_invaders_TB_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/natha/Projects/SpaceInvaders/SpaceInvaders.sim/sim_1/behav/xsim/xsim.dir/space_invaders_TB_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/natha/Projects/SpaceInvaders/SpaceInvaders.sim/sim_1/behav/xsim/xsim.dir/space_invaders_TB_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate
