@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1.1 (win64) Build 3286242 Wed Jul 28 13:10:47 MDT 2021
-// Date        : Sat Oct 23 18:23:25 2021
+// Date        : Sat Oct 23 16:52:43 2021
 // Host        : DESKTOP-E8NVJTL running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/natha/Projects/SpaceInvaders/SpaceInvaders.gen/sources_1/ip/clk_vga480p_2/clk_vga480p_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top clk_vga480p -prefix
+//               clk_vga480p_ clk_vga480p_sim_netlist.v
 // Design      : clk_vga480p
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -22,12 +22,12 @@ module clk_vga480p
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire clk_out;
 
-  clk_vga480p_clk_wiz inst
+  clk_vga480p_clk_vga480p_clk_wiz inst
        (.clk_in1(clk_in1),
         .clk_out(clk_out));
 endmodule
 
-module clk_vga480p_clk_wiz
+module clk_vga480p_clk_vga480p_clk_wiz
    (clk_out,
     clk_in1);
   output clk_out;
@@ -77,12 +77,12 @@ module clk_vga480p_clk_wiz
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(9.125000),
+    .CLKFBOUT_MULT_F(47.250000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(10.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(36.500000),
+    .CLKOUT0_DIVIDE_F(37.500000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
@@ -112,7 +112,7 @@ module clk_vga480p_clk_wiz
     .CLKOUT6_PHASE(0.000000),
     .CLKOUT6_USE_FINE_PS("FALSE"),
     .COMPENSATION("ZHOLD"),
-    .DIVCLK_DIVIDE(1),
+    .DIVCLK_DIVIDE(5),
     .IS_CLKINSEL_INVERTED(1'b0),
     .IS_PSEN_INVERTED(1'b0),
     .IS_PSINCDEC_INVERTED(1'b0),

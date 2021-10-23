@@ -36,7 +36,7 @@ module vga_hsync(
     reg [9:0] x_pos = 0;
 
     assign x = x_pos;
-    assign hsync = ~(x_pos >= SYNC_START && x_pos <= SYNC_END);
+    assign hsync = ~(x_pos >= SYNC_START && x_pos < SYNC_END);
     assign line_end = x_pos == END;
     assign enable = x_pos < ACTIVE_END;
     

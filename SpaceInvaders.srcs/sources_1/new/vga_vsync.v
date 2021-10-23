@@ -35,7 +35,7 @@ module vga_vsync(
     reg [9:0] y_pos = 0;
 
     assign y = y_pos;
-    assign vsync = ~(y_pos >= SYNC_START && y_pos <= SYNC_END);
+    assign vsync = ~(y_pos >= SYNC_START && y_pos < SYNC_END);
     assign enable = y_pos < ACTIVE_END;
 
     always @(posedge next) begin
