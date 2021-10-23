@@ -28,24 +28,24 @@ module space_invaders(
     output hsync,
     output vsync
 );
-    wire pixelClock;
+    wire pixel_clock;
     wire [9:0] x, y;
     wire video_enable;
 
-    pixel_clk pixel_clk_generator(
-        .clk_100mhz(clk_100mhz),
-        .out(pixelClock)
+    clk_vga480p vga_clk(
+        .clk_in1(clk_100mhz),
+        .clk_out(pixel_clock)
     );
 
     vga vga_device(
-        .clk_25_2mhz(pixelClock),
+        .clk_25_2mhz(pixel_clock),
         .hsync(hsync),
         .vsync(vsync),
         .enable(video_enable),
         .x(x),
         .y(y)
     );
-    
+
     gfx_renderer renderer(
         .enable(video_enable),
         .x(x),

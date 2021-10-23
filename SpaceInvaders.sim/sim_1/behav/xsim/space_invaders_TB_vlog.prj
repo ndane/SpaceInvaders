@@ -1,6 +1,7 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  \
-"../../../../SpaceInvaders.srcs/sources_1/new/pixel_clk.v" \
+verilog xil_defaultlib  --include "../../../../SpaceInvaders.gen/sources_1/ip/clk_vga480p" \
+"../../../../SpaceInvaders.gen/sources_1/ip/clk_vga480p/clk_vga480p_clk_wiz.v" \
+"../../../../SpaceInvaders.gen/sources_1/ip/clk_vga480p/clk_vga480p.v" \
 "../../../../SpaceInvaders.srcs/sources_1/new/renderer.v" \
 "../../../../SpaceInvaders.srcs/sources_1/new/space_invaders.v" \
 "../../../../SpaceInvaders.srcs/sources_1/new/vga.v" \

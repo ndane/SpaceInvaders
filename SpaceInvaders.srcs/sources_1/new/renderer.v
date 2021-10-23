@@ -29,8 +29,15 @@ module gfx_renderer(
     output [3:0] blue
 );
 
-    // TODO: Other stuff will set these for each pixel
-    assign red = enable ? 4'h5 : 4'h0;
-    assign green = enable ? 4'h5 : 4'h0;
-    assign blue = enable ? 4'h5 : 4'h0;
+    reg [3:0] r = 0, g = 0, b = 0;
+    
+    assign red = r;
+    assign green = g;
+    assign blue = b;
+    
+    always @* begin
+     r <= enable ? (x % 2 == 0 ? 4'h5 : 4'h4) : 4'b0000;
+     g <= enable ? (x % 2 == 0 ? 4'h5 : 4'h4) : 4'b0000;
+     b <= enable ? (x % 2 == 0 ? 4'h5 : 4'h4) : 4'b0000;
+    end
 endmodule
