@@ -21,7 +21,9 @@
 
 
 module gfx_renderer(
+    input clk,
     input enable,
+    input [11:0] switches,
     input [9:0] x,
     input [9:0] y,
     output [3:0] red,
@@ -29,15 +31,18 @@ module gfx_renderer(
     output [3:0] blue
 );
 
-    reg [3:0] r = 0, g = 0, b = 0;
+    wire [3:0] r, g, b;
     
-    assign red = r;
-    assign green = g;
-    assign blue = b;
+    assign red = enable ? r : 4'h0;
+    assign green = enable ? g : 4'h0;
+    assign blue = enable ? b : 4'h0;
     
-    always @* begin
-     r <= enable ? (x % 2 == 0 ? 4'h5 : 4'h4) : 4'b0000;
-     g <= enable ? (x % 2 == 0 ? 4'h5 : 4'h4) : 4'b0000;
-     b <= enable ? (x % 2 == 0 ? 4'h5 : 4'h4) : 4'b0000;
-    end
+
+    renderer_switch_debugger debugger(
+        .clk(clk),
+        .switches(switches),
+        .rgb({r, g, b}),
+        .enable(enable)
+    );
+    
 endmodule

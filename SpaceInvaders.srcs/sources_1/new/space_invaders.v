@@ -22,23 +22,18 @@
 
 module space_invaders(
     input clk_100mhz,
+    input [11:0] switches,
     output [3:0] vga_red,
     output [3:0] vga_green,
     output [3:0] vga_blue,
     output hsync,
     output vsync
 );
-    wire pixel_clock;
     wire [9:0] x, y;
     wire video_enable;
 
-    clk_vga480p vga_clk(
-        .clk_in1(clk_100mhz),
-        .clk_out(pixel_clock)
-    );
-
     vga vga_device(
-        .clk_25_2mhz(pixel_clock),
+        .clk_100mhz(clk_100mhz),
         .hsync(hsync),
         .vsync(vsync),
         .enable(video_enable),
@@ -47,7 +42,9 @@ module space_invaders(
     );
 
     gfx_renderer renderer(
+        .clk(clk),
         .enable(video_enable),
+        .switches(switches),
         .x(x),
         .y(y),
         .red(vga_red),

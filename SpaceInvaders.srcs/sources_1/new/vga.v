@@ -21,18 +21,24 @@
 
 
 module vga(
-    input wire clk_25_2mhz,
+    input wire clk_100mhz,
     output wire hsync,
     output wire vsync,
     output wire enable,
     output wire [9:0] x,
     output wire [9:0] y
 );
+    wire pixel_clock;
     wire next_vsync;
     wire h_enable, v_enable;
     
+     clk_vga480p vga_clk(
+        .clk_in1(clk_100mhz),
+        .clk_out(pixel_clock)
+    );
+    
     vga_hsync hsync_generator(
-        .clk(clk_25_2mhz),
+        .clk(pixel_clock),
         .x(x),
         .enable(h_enable),
         .hsync(hsync),
